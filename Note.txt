@@ -1,0 +1,4 @@
+1) Change Initial Location to City of the event
+2) Add a legend to the header that has a description of what to do
+3) Add a description before the button of activities.
+4) Select an address or we will help you to find a location.

@@ -1,0 +1,278 @@
+﻿@*@functions{
+        public string GetAntiForgeryToken()
+        {
+            string cookieToken, formToken;
+            AntiForgery.GetTokens(null, out cookieToken, out formToken);
+            return cookieToken + ":" + formToken;
+        }
+    }
+*@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>ArielPaw</title>
+
+    <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false&libraries=places"></script>
+    <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+
+    <meta name="description" content="ArielPaw" />
+    <meta name="keywords" content="Events, planner, activities" />
+    <!-- end: Meta -->
+    <!-- start: Mobile Specific -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <!-- end: Mobile Specific -->
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+
+    <!-- jquery and jquery ui -->
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js"></script>
+
+
+    <!-- twitter bootstrap jquery ui. -->
+    <link rel="stylesheet" type="text/css" href="../../Content/jquery.ui.1.10.0.ie.css">
+    <link rel="stylesheet" type="text/css" href="../../Content/jquery-ui-1.10.0.custom.css">
+
+    <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Droid+Sans:400,700">
+    <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Droid+Serif">
+    <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Boogaloo">
+    <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Economica:700,400italic">
+
+    <!-- end: CSS -->
+
+    <script type="text/javascript" src="http://oauth.googlecode.com/svn/code/javascript/oauth.js"></script>
+    <script type="text/javascript" src="http://oauth.googlecode.com/svn/code/javascript/sha1.js"></script>
+
+    <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    @*  @Scripts.Render("~/bundles/jquery")
+        @Scripts.Render("~/bundles/jqueryui")*@
+
+    @Scripts.Render("~/Scripts/vendor")
+    @Scripts.Render("~/App/ajaxlogin.js")
+
+    
+</head>
+
+<body>
+    <!--start: Header -->
+   <!-- <header>
+
+        <div class="container">
+            <div class="navbar  navbar-inverse ">
+                <div class="navbar-inner">
+                    <a class="brand" href="#">
+                        <i class="ico-sun ico-white circle-color-full"></i>
+                        <span>ArielPaw</span>.
+                    </a>
+
+                </div>
+            </div>
+        </div>
+    </header>-->
+    <!--end: Header-->
+    
+    <div>
+       
+
+        @RenderBody()
+    </div>
+    <!-- start: Footer Menu -->
+    <div id="footer-menu" class="hidden-tablet hidden-phone">
+
+        <!-- start: Container -->
+        <div class="container">
+
+            <!-- start: Row -->
+            <div class="row">
+
+                <!-- start: Footer Menu Logo -->
+                <div class="span4">
+                    <div id="footer-menu-logo">
+                        <!--<h3>ArielPaw</h3>-->
+
+
+                    </div>
+                </div>
+                <!-- end: Footer Menu Logo -->
+                <!-- start: Footer Menu Links-->
+                <div class="span8">
+
+                    <div id="footer-menu-links">
+
+                        <ul id="footer-nav">
+
+                            <li><a href="index.html">Start</a></li>
+
+                            <li><a href="about.html">About</a></li>
+
+                            <li><a href="services.html">Services</a></li>
+
+                            <li><a href="pricing.html">Pricing</a></li>
+
+                            <li><a href="contact.html">Contact</a></li>
+
+                        </ul>
+
+                    </div>
+
+                </div>
+                <!-- end: Footer Menu Links-->
+                <!-- start: Footer Menu Back To Top -->
+                <!--<div class="span1">
+
+                    <div id="footer-menu-back-to-top">
+                        <a href="#"></a>
+                    </div>
+
+                </div>-->
+                <!-- end: Footer Menu Back To Top -->
+
+            </div>
+            <!-- end: Row -->
+
+        </div>
+        <!-- end: Container  -->
+
+    </div>
+    <!-- end: Footer Menu -->
+    <!-- start: Footer -->
+    <div id="footer">
+
+        <!-- start: Container -->
+        @*	<div class="container">
+
+                <!-- start: Row -->
+                <div class="row">
+
+                    <!-- start: About -->
+                    <div class="span3">
+
+                        <h3>About Us</h3>
+                        <p>
+                            Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat.
+                        </p>
+
+                    </div>
+                    <!-- end: About -->
+
+                    <!-- start: Photo Stream -->
+                    @*<div class="span3">
+
+                        <h3>Photo Stream</h3>
+                        <div class="flickr-widget">
+                                <script type="text/javascript" src="http://www.flickr.com/badge_code_v2.gne?count=9&display=latest&size=s&layout=x&source=user&user=29609591@N08"></script>
+                            <div class="clear"></div>
+                        </div>
+
+                    </div>
+                    <!-- end: Photo Stream -->
+
+                    <div class="span6">
+
+                        <!-- start: Follow Us -->
+                        <h3>Follow Us!</h3>
+                        <ul class="social-grid">
+                            <li>
+                                <div class="social-item">
+                                    <div class="social-info-wrap">
+                                        <div class="social-info">
+                                            <div class="social-info-front social-twitter">
+                                                <a href="http://twitter.com"></a>
+                                            </div>
+                                            <div class="social-info-back social-twitter-hover">
+                                                <a href="http://twitter.com"></a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="social-item">
+                                    <div class="social-info-wrap">
+                                        <div class="social-info">
+                                            <div class="social-info-front social-facebook">
+                                                <a href="http://facebook.com"></a>
+                                            </div>
+                                            <div class="social-info-back social-facebook-hover">
+                                                <a href="http://facebook.com"></a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="social-item">
+                                    <div class="social-info-wrap">
+                                        <div class="social-info">
+                                            <div class="social-info-front social-dribbble">
+                                                <a href="http://dribbble.com"></a>
+                                            </div>
+                                            <div class="social-info-back social-dribbble-hover">
+                                                <a href="http://dribbble.com"></a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="social-item">
+                                    <div class="social-info-wrap">
+                                        <div class="social-info">
+                                            <div class="social-info-front social-flickr">
+                                                <a href="http://flickr.com"></a>
+                                            </div>
+                                            <div class="social-info-back social-flickr-hover">
+                                                <a href="http://flickr.com"></a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                        <!-- end: Follow Us -->
+
+                        <!-- start: Newsletter -->
+                        <form id="newsletter">
+                            <h3>Newsletter</h3>
+                            <p>Please leave us your email</p>
+                            <label for="newsletter_input"></label>
+                            <input type="text" id="newsletter_input"/>
+                            <input type="submit" id="newsletter_submit" value="submit">
+                        </form>
+                        <!-- end: Newsletter -->
+
+                    </div>
+
+                </div>
+                <!-- end: Row -->
+
+            </div>
+            <!-- end: Container  -->
+        *@
+    </div>
+    <!-- end: Footer -->
+    <!-- start: Copyright -->
+    <div id="copyright">
+
+        <!-- start: Container -->
+        <div class="container">
+
+            <div class="span12">
+                <p>
+                    &copy; 2014
+
+                </p>
+            </div>
+
+        </div>
+        <!-- end: Container  -->
+
+    </div>
+    
+    @RenderSection("scripts", required: false)
+</body>
+</html>

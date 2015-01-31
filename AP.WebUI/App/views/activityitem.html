@@ -1,0 +1,182 @@
+﻿
+<section>
+    <!-- start: Page Title and search -->
+    <div id="page-title">
+        <div id="page-title-inner">
+            <div class="container">
+                <div class="pull-left">
+                    <div data-bind="visible: plan">
+                        <h2 data-bind="text: plan.Name"></h2>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="main container-fluid">
+    <!--start: Wrapper-->
+    <div id="wrapper">
+        <!--start: Container -->
+        <div class="container">
+
+                
+                    <div class="row-fluid">
+                        <div class="span12">
+                            <div class="clearfix" style="padding:2%">
+                                <h1>
+                                        <a data-bind="attr: { title: business.name, href: business.url }" target="_blank"><span style="font-weight: bold;" data-bind="text: business.name"></span></a>
+                                    
+                                </h1>
+                            </div>
+                        </div>
+
+                        
+                            <div class="span3" >
+
+                                <div data-bind="if: business.image_url">
+                                    <img data-bind="attr: { src: business.image_url }" class="img-polaroid" style="height: 90%; width: 90%" />
+                                </div>
+                                <div data-bind="ifnot: business.image_url">
+                                    <img src="/Images/blank_biz_medium_sq.png" class="img-polaroid" style="height: 90%; width: 90%" />
+                                </div>
+
+                            </div>
+                            <div class="span4" style="margin-bottom:3%">
+                                <fieldset>
+
+
+                                    <div class="clearfix">
+                                        <h3>
+                                            <img data-bind="attr: { src: business.rating_img_url }" style="width: 84px; height: 17px;">
+                                            <a data-bind="attr: { title: business.name, href: business.url }" target="_blank"><span data-bind=" text: business.review_count_description"></span></a>
+                                        </h3>
+                                    </div>
+                                    <div class="clearfix">
+                                        <h4>
+                                            <div data-bind="foreach:{data:business.categories}">
+
+                                                <span data-bind="ifnot: $index">Categories:</span>
+                                                <span data-bind="if: $index">, </span>
+                                                <span data-bind="text: $data[0]"></span>
+
+                                            </div>
+                                        </h4>  
+                                    </div>
+
+                                    <div class="clearfix" >
+                                        <h2 data-bind="text: business.display_street()"></h2>
+                                    </div>
+                                    <div class="clearfix" >
+                                        <h2><span data-bind="text: business.citystate()"></span>&nbsp;<span data-bind="text:business.postal_code"></span></h2>
+                                    </div>
+
+
+                                    <div class="clearfix">
+
+                                        <h2 data-bind="text: business.formated_phone()"></h2>
+                                    </div>
+                                    <div class="clearfix">
+                                        <h3>
+                                            <a data-bind="attr: { href: business.url, title: business.url }">Website</a>
+                                        </h3>
+
+                                    </div>
+                                    <div class="clearfix">
+                                        <a target="_blank" href="http://www.yelp.com">
+                                            <img src="http://s3-media3.ak.yelpcdn.com/assets/2/www/img/9c9b10dc7226/developers/reviewsFromYelpWHT.gif" alt="Reviews from Yelp, white" style="width: 115px; height: 25px;">
+                                        </a>
+                                    </div>
+                                </fieldset>
+                            </div>
+
+                        
+
+
+
+
+                        <div class="span3" style="padding-bottom:1%">
+                            
+                            <div class="clearfix">
+
+                                <div class=" input-prepend input-append bootstrap-timepicker">
+                                    <span class="add-on">
+                                        <!--<i class="icon-time"></i>-->
+                                        Time
+                                    </span>
+                                    <input class="input-medium" type="text" data-bind="timepicker: searchTime, timepickerOptions: timeOptions">
+                                    <span class="add-on">
+                                        <i class="icon-time"></i>
+                                    </span>
+                                </div>
+                            </div>
+    
+                            
+                            <div class="clearfix">
+                                <!--<div class="input-append date">
+                                    <input type="text" data-bind="datepicker: searchDate, datepickerOptions: dateOptions" />
+                                    <span class="add-on"><i class="icon-th"></i></span>
+                                </div>
+                                    -->
+
+                                <div class="date" data-bind="datepicker: searchDate, datepickerOptions: dateOptions">
+                                </div>
+
+                                
+                            </div>
+
+                            
+                            
+
+                            <div class="clearfix">
+                                <ul class="pager pull-left" style="font-weight:bold; font-size:large">
+                                    <li>
+                                        <a href="#" data-bind="click: goBack">
+                                            <span>Cancel</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#" data-bind="click:save">
+                                            <span>Save</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+
+                            <div class="clearfix"></div>
+
+                        </div>
+                        
+                        <div class="span7" style="margin-top:1%">
+                            <div class="title"><h3>Reviews</h3></div>
+                            <!-- ko foreach:business.reviews -->
+                            <div class="testimonials">
+                                <img data-bind="attr: { src: rating_image_url }" style="width: 84px; height: 17px;">
+                                <h4>
+                                    
+                                    <span data-bind="text: excerpt"></span>
+                                </h4>
+
+                            </div>
+                            <div class="testimonials-bg"></div>
+                            <div class="testimonials-author">
+                                <h4 style="font-size:medium">
+                                    <span data-bind="text: user().name"></span><span> - </span>  <span data-bind="text: formated_date_created"></span>
+                                </h4>
+                            </div>
+                            <div class="clearfix"></div>
+                            <!--/ko-->
+                        </div>
+                        
+                    </div>
+
+                
+
+            </div>
+        </div>
+</section>
+
+
+
+
+

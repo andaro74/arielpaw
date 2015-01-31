@@ -1,0 +1,48 @@
+﻿@model ICollection<AuthenticationClientData>
+
+@if (Model.Count == 0)
+{
+    <div class="message-info">
+        <p>
+            There are no external authentication services configured. See <a href="http://go.microsoft.com/fwlink/?LinkId=252166">this article</a>
+            for details on setting up this ASP.NET application to support logging in via external services.
+        </p>
+    </div>
+}
+else
+{
+    using (Html.BeginForm("ExternalLogin", "Account", new { ReturnUrl = ViewBag.ReturnUrl }))
+    {
+        @Html.AntiForgeryToken()
+        <fieldset>
+            <legend>
+                Social Sign in
+            </legend>
+            
+                @foreach (AuthenticationClientData p in Model)
+                {
+                    if (p.DisplayName == "Facebook")
+                    {
+
+                        <div class="clearfix" style="margin-bottom:5px;">
+                            <button type="submit" name="provider" value="@p.AuthenticationClient.ProviderName" title="Log in using your @p.DisplayName account" class="zocial facebook" style="width:200px;">@p.DisplayName</button>
+                        </div>
+                    }
+                    if (p.DisplayName == "Twitter")
+                    {
+                        <div class="clearfix" style="margin-bottom:5px;">
+                            <button type="submit" name="provider" value="@p.AuthenticationClient.ProviderName" title="Log in using your @p.DisplayName account" class="zocial twitter" style="width:200px">@p.DisplayName</button>
+                        </div>
+                    }
+                    if (p.DisplayName == "Google")
+                    {
+                        <div class="clearfix">
+                            <button type="submit" name="provider" value="@p.AuthenticationClient.ProviderName" title="Log in using your @p.DisplayName account" class="zocial googleplus" style="width:200px">@p.DisplayName</button>
+                        </div>
+                    }
+                }
+            
+
+        </fieldset>
+    }
+}

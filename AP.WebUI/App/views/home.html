@@ -1,0 +1,118 @@
+﻿<section>
+    
+    <!--start: Wrapper-->
+    <div id="wrapper">
+		
+    <!-- start: Page Title and search -->
+    <div id="page-title">
+        <div id="page-title-inner">
+            <div class="container" >
+                <div class="pull-left">
+				
+                    <div data-bind="visible: !isLocationOnEdit()">
+                        <h2 data-bind="text: locationFilter.selectedLocation.name" ></h2>
+					    <span>within</span>
+                        <span data-bind="text: locationFilter.radius_filter().description"></span>
+				        <a href="#"  data-bind="click: editLocation" ><b style=" font-size: 12pt">Change Location</b></a>
+			        </div>
+			
+                    <div data-bind="visible: isLocationOnEdit">
+                        <form class="form-inline"> 
+                            <input type="text" class="search-query span3" placeholder="Near the following location.." id="Text1" data-bind="value: locationFilter.selectedLocation.name, googleAutoComplete: locationFilter.autocompleteText" />
+                            <select class="span2 navbar-content-center" data-bind="options: availableDistances, optionsText: 'description', value: locationFilter.radius_filter"></select>
+                            <button type="submit" class="btn btn-inverse" data-bind="click: endEditLocation" >Save Changes</button>
+                            <button type="submit" class="btn" data-bind="click: endEditLocation" >Cancel</button>
+                        </form>
+                    </div>
+                </div>
+			
+            </div>
+
+        </div>
+
+    </div>
+		
+
+    <!--start: Container -->
+    <div class="container">
+			
+		
+
+			
+        <!-- start: Row -->
+        <div class="row">
+				
+            <!-- start: Icon Boxes -->
+            <div class="icons-box-vert-container">
+
+                <!-- start: Icon Box Start -->
+                <!--<div class="span4">
+                        <div class="icons-box-vert">
+                            <i class="ico-circle-info  ico-white circle-color-full"></i>
+                            <div class="icons-box-vert-info">
+                                <h3>How it works</h3>
+                                <p>Set the location where you want the plan to start. Then select one of the suggested plans or create your own.</p>
+                            </div>
+                            <div class="clear"></div>
+                        </div>
+                    </div>-->
+					
+                <!-- start: Icon Box Start -->
+                <div class="span6">
+                    <div class="icons-box-vert">
+                        <i class="ico-edit ico-white circle-color-full"></i>
+                        <div class="icons-box-vert-info">
+							   
+                            <div class="input-append">
+                                <input class="span3"  id="name" name="name" type="text" placeholder="Enter the name of the plan (My girlfriend birthday party)" data-bind="value: plan.Name">
+                                <!--<button type="button" class="btn btn-info" data-bind="click: save">Create New</button>-->
+									
+                            </div>
+                        </div>
+                        <div class="clear"></div>
+                    </div>
+                </div>
+                <!-- end: Icon Box -->
+                    
+                    
+                    
+                <!-- start: Icon Box Start -->
+                <div class="span6">
+                    <div class="icons-box-vert">
+                        <i class="ico-edit ico-white circle-color-full"></i>
+                        <div class="icons-box-vert-info">
+							   
+                            
+                                <input class="span3"  id="Text2" name="categoryName" type="text" placeholder="Category (restaurant, park, birthday, cafe)" data-bind="value: locationFilter.categorySearch">
+                                <button type="button" class="btn btn-info" data-bind="click: save">Create New</button>
+									
+                           
+                        </div>
+                        <div class="clear"></div>
+                    </div>
+                </div>
+                <!-- end: Icon Box --
+
+                </div>
+                    <!-- end: Icon Boxes -->
+                <div class="clear"></div>
+            </div>
+            <!-- end: Row -->
+			
+            <!-- start: Row -->
+            <div class="row">
+	
+			
+
+            </div>
+            <!-- end: Row -->
+			
+			
+			
+        </div>
+        <!--end: Container-->
+	
+    </div>
+    <!-- end: Wrapper  -->	
+
+</section>

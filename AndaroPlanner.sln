@@ -1,0 +1,86 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.21005.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AP.WebUI", "AP.WebUI\AP.WebUI.csproj", "{4830A31B-738F-4CBC-8197-5BAB124AB85B}"
+	ProjectSection(ProjectDependencies) = postProject
+		{A67DEE2F-D50B-48C3-A8D7-B7AE1B312887} = {A67DEE2F-D50B-48C3-A8D7-B7AE1B312887}
+		{63D05257-AC39-4554-9AC2-3CAC3F6B50DA} = {63D05257-AC39-4554-9AC2-3CAC3F6B50DA}
+		{E6A11E7F-EA90-405C-A3FE-213A6F397231} = {E6A11E7F-EA90-405C-A3FE-213A6F397231}
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AP.Data", "AP.Data\AP.Data.csproj", "{A67DEE2F-D50B-48C3-A8D7-B7AE1B312887}"
+	ProjectSection(ProjectDependencies) = postProject
+		{63D05257-AC39-4554-9AC2-3CAC3F6B50DA} = {63D05257-AC39-4554-9AC2-3CAC3F6B50DA}
+		{E6A11E7F-EA90-405C-A3FE-213A6F397231} = {E6A11E7F-EA90-405C-A3FE-213A6F397231}
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AP.Model", "AP.Model\AP.Model.csproj", "{E6A11E7F-EA90-405C-A3FE-213A6F397231}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AP.Contracts", "AP.Contracts\AP.Contracts.csproj", "{63D05257-AC39-4554-9AC2-3CAC3F6B50DA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ObjectInterfaces", "ObjectInterfaces\ObjectInterfaces.csproj", "{48045A3D-99E7-498F-A23A-22B768BCFAEB}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Documentation", "Documentation", "{9BADB7AF-1845-45F5-8D1D-7219234B5662}"
+	ProjectSection(SolutionItems) = preProject
+		TechnicalDocumentation.txt = TechnicalDocumentation.txt
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 6
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = https://tfs05.discountasp.net/tfs/andaroproj
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = AP.WebUI\\AP.WebUI.csproj
+		SccProjectName1 = AP.WebUI
+		SccLocalPath1 = AP.WebUI
+		SccProjectUniqueName2 = AP.Data\\AP.Data.csproj
+		SccProjectName2 = AP.Data
+		SccLocalPath2 = AP.Data
+		SccProjectUniqueName3 = AP.Model\\AP.Model.csproj
+		SccProjectName3 = AP.Model
+		SccLocalPath3 = AP.Model
+		SccProjectUniqueName4 = AP.Contracts\\AP.Contracts.csproj
+		SccProjectName4 = AP.Contracts
+		SccLocalPath4 = AP.Contracts
+		SccProjectUniqueName5 = ObjectInterfaces\\ObjectInterfaces.csproj
+		SccProjectName5 = ObjectInterfaces
+		SccLocalPath5 = ObjectInterfaces
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{4830A31B-738F-4CBC-8197-5BAB124AB85B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4830A31B-738F-4CBC-8197-5BAB124AB85B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4830A31B-738F-4CBC-8197-5BAB124AB85B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4830A31B-738F-4CBC-8197-5BAB124AB85B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4830A31B-738F-4CBC-8197-5BAB124AB85B}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{A67DEE2F-D50B-48C3-A8D7-B7AE1B312887}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A67DEE2F-D50B-48C3-A8D7-B7AE1B312887}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A67DEE2F-D50B-48C3-A8D7-B7AE1B312887}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A67DEE2F-D50B-48C3-A8D7-B7AE1B312887}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A67DEE2F-D50B-48C3-A8D7-B7AE1B312887}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{E6A11E7F-EA90-405C-A3FE-213A6F397231}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E6A11E7F-EA90-405C-A3FE-213A6F397231}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E6A11E7F-EA90-405C-A3FE-213A6F397231}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E6A11E7F-EA90-405C-A3FE-213A6F397231}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E6A11E7F-EA90-405C-A3FE-213A6F397231}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{63D05257-AC39-4554-9AC2-3CAC3F6B50DA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{63D05257-AC39-4554-9AC2-3CAC3F6B50DA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{63D05257-AC39-4554-9AC2-3CAC3F6B50DA}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{63D05257-AC39-4554-9AC2-3CAC3F6B50DA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{63D05257-AC39-4554-9AC2-3CAC3F6B50DA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{48045A3D-99E7-498F-A23A-22B768BCFAEB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{48045A3D-99E7-498F-A23A-22B768BCFAEB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{48045A3D-99E7-498F-A23A-22B768BCFAEB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{48045A3D-99E7-498F-A23A-22B768BCFAEB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{48045A3D-99E7-498F-A23A-22B768BCFAEB}.Release|Any CPU.Deploy.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

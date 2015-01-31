@@ -1,0 +1,196 @@
+﻿
+
+<section>
+    
+    <div id="page-title">
+        <div id="page-title-inner">
+            <div class="container">
+                <div class="pull-left">
+                    <h2 data-bind="text:plan.Name"></h2>
+
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+
+
+</section>
+
+
+<div id="wrapper">
+    <!--start: Container -->
+
+    <div class="container">
+
+
+        <div class="navbar  navbar-inverse">
+            <div class="navbar-inner">
+                <a class="btn btn-navbar" data-toggle="collapse" data-target="#localMenu">
+                    <span>Filter</span>
+                </a>
+
+                <div id="Menu2" class="nav">
+                    <ul class="pager pull-left" style="font-weight:bold; font-size:medium">
+                        <li>
+                            <a href="#" data-bind="click: goBack">
+                                <span>Return</span>
+                            </a>
+                        </li>
+                        <li><a href="#" data-bind="click: locationmap.showHideMapContainer, showHideMap: locationmap.mapvisible, slideduration: 600, text:locationmap.mapText"></a></li>
+                    </ul>
+
+                </div>
+
+                <div id="localMenu" class="nav-collapse collapse">
+                    <ul class="nav">
+                        <li>
+                            <form class="form-inline" style="padding-top:17px; padding-right:10px;">
+                                
+                                <input type="text" class="search-query span4" style="padding:5px" placeholder="Near the following location.." data-bind="value: locationFilter.selectedLocation.name, googleAutoComplete: locationFilter.autocompleteText, event: {keypress:googleAutocompleteDefault}" />
+                                <select class="form-control input-small" style="padding:5px" data-bind="options: locationFilter.availableDistances, optionsText: 'description', value: locationFilter.radius_filter"></select>
+                            </form>
+                        </li>
+                        <li>
+                            <form class="form-inline" style="padding-top:17px; padding-right:3px;">
+                                
+                                <input class=" input-large" style="padding:5px" name="categoryName" type="text" placeholder="Type restaurant, cafe, bar" data-bind="value: locationFilter.categorySearch, event: {keypress:categoriesEnterKey}">
+
+                                </form>
+                            
+</li>
+
+                        <li>
+                            <ul class="pager pull-left" style="font-weight:bold; font-size:medium">
+                                <li>
+                                    <a href="#" data-bind="click: clearCategory">
+                                        <span>Clear</span>
+                                    </a>
+
+                                </li>
+                                <li>
+
+                                    <a href="#" data-bind="click: findLocations">
+                                        <span>Search</span>
+                                    </a>
+
+                                </li>
+                            </ul>
+
+                        </li>
+
+
+
+                    </ul>
+
+
+                </div>
+            </div>
+        </div>
+        </div>
+    </div>
+
+
+        <section id="map_container">
+            <!--ko compose: {model:'viewmodels/googlemap', view: 'views/googlemap', activate:true} -->
+            <!--/ko-->
+        </section>
+
+
+        <section class="main container-fluid">
+            <!--start: Wrapper-->
+            <div id="wrapper">
+                <!--start: Container -->
+
+                <div class="container">
+
+
+
+
+
+
+
+
+                    <!-- start: Portfolio -->
+                    <div id="portfolio-wrapper" class="row">
+
+                        <div class="loader" data-bind="visible: businesses().length===0">
+                            <hr />
+                            <div class="span4"></div>
+                            <div class="span4">
+                                <div style="text-align:center; border:none">
+                                    <h1> <i class="icon-spinner icon-2x icon-spin"> </i></h1>
+
+                                </div>
+                            </div>
+                            <div class="span4"></div>
+                        </div>
+
+
+
+
+                        <!-- ko foreach: businesses -->
+
+                        <div class="span4 portfolio-item">
+                            <div class="picture" style="height:430px;">
+                                <div class="item-description">
+                                    <div class="clearfix">
+                                        <p style="font-size:18px; font-weight:bold">
+                                            <span data-bind="text: local_id" class="badge badge-inverse"></span>
+                                            <a href="#" data-bind="click: $parent.showAddOptions, text: display_name, attr: { title: name }"></a>
+                                        </p>
+                                    </div>
+
+
+                                    <div class="clearfix" style="padding-bottom:5%;padding-left:15%;">
+                                        <a href="#" data-bind="click: $parent.showAddOptions">
+                                            <div data-bind="if: image_url">
+
+                                                <img data-bind="attr: { src: image_url, alt: id }" class="thumbnail" style="height: 70%; width: 70%" />
+                                            </div>
+                                            <div data-bind="ifnot: image_url">
+                                                <img src="/Images/blank_biz_medium_sq.png" class="thumbnail" style="height: 70%; width: 70%" />
+                                            </div>
+                                        </a>
+                                    </div>
+                                    <div class="clearfix">
+
+                                        <div class="clearfix">
+                                            <h3> <img data-bind="attr: { src: rating_img_url, alt: id }" style="width: 84px; height: 17px;"></img> <a data-bind="attr: { title: name, href: url }" target="_blank"><span data-bind="text: review_count_description"></span></a></h3>
+
+                                        </div>
+
+                                        <!--<div class="clearfix">
+                                            <a target="_blank" href="http://www.yelp.com">
+                                                <img src="http://s3-media3.ak.yelpcdn.com/assets/2/www/img/9c9b10dc7226/developers/reviewsFromYelpWHT.gif" alt="Reviews from Yelp, white" style="width: 115px; height: 25px;">
+                                            </a>
+                                        </div>-->
+                                         <div class="clearfix" >
+                                                 <h3 data-bind="text: formated_phone()"></h3>
+                                             
+                                             </div>
+                                        
+                                    </div>
+
+
+                                    <div class="clearfix">
+                                        <h3 data-bind="text: chunked_address()"></h3>
+                                    </div>
+                                    <div class="clearfix">
+
+                                        <h3 data-bind="text: citystate()"></h3>
+                                    </div>
+
+                                </div>
+
+                            </div>
+                        </div>
+
+                        <!-- /ko -->
+
+                    </div>
+                </div>
+            </div>
+        </section>

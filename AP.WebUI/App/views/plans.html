@@ -1,0 +1,108 @@
+﻿
+<section>
+    <!-- start: Page Title and search -->
+    <div id="page-title">
+        <div id="page-title-inner">
+            <div class="container">
+                <div class="pull-left">
+                    <h2>Plans</h2>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+</section>
+
+
+<section class="main container-fluid">
+    <!--start: Wrapper-->
+
+    <div id="wrapper" style="margin-top:2%">
+        <div class="container">
+
+            <div id="portfolio-wrapper" class="row">
+
+
+                <div data-bind="foreach: { data: plans, beforeRemove: hidePlanItemElement }">
+
+
+                    <div class="picture" style=" margin-bottom: 2%; padding-bottom:1%; padding-top:1%;">
+
+                        <div class="item-description">
+                            <div class="span12">
+                                <div class="span8">
+
+                                    <div class="clearfix">
+                                        <h2>
+                                            <a href="#" data-bind="click: $parent.viewPlan,  attr: { title: Name }"> <span style="font-weight: bold;" data-bind="text: Name "></span> </a>
+                                        </h2>
+                                    </div>
+
+                                </div>
+
+                                <div class="span3">
+                                    <h3>
+                                        <span data-bind="text: Activities()[0].DisplayDayOfWeek"></span>,&nbsp;<span data-bind="text: Activities()[0].DisplayMonth"></span>&nbsp;<span data-bind="text: Activities()[0].DisplayDay"></span>&nbsp;
+                                        <span style="font-weight:bold" data-bind="text: Activities()[0].StartFormatedTime"></span>
+                                    </h3>
+
+
+
+                                </div>
+                                <div class="clearfix"></div>
+                            </div>
+                            <div class="span12">
+                                <div class="span8">
+                                    <h4 data-bind="text:Description"></h4>
+                                </div>
+                                <div class="span3">
+                                    <h4>
+                                        <span data-bind="text: Activities().length" style=" font-weight:bold;" />
+
+                                        <span data-bind="if:Activities().length===1">
+                                            &nbsp;Activity
+                                        </span>
+                                        <span data-bind="if:Activities().length>1">
+                                            &nbsp;Activities
+
+                                        </span>
+                                    </h4>
+
+
+                                </div>
+
+
+                                <div class="clear"></div>
+                            </div>
+                            <div class="span12">
+
+                                <div class="span2">
+                                    <ul class="pager pull-left">
+                                        <li>
+
+                                            <a href="#" data-bind="click: $parent.removePlan">Remove Plan</a>
+
+
+                                        </li>
+
+                                    </ul>
+                                </div>
+
+                            </div>
+
+
+                            <div class="clear"></div>
+                        </div>
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</section>
+
+

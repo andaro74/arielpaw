@@ -1,0 +1,129 @@
+﻿
+<section>
+    <!-- start: Page Title and search -->
+    <div id="page-title">
+        <div id="page-title-inner">
+            <div class="container">
+                <div class="pull-left">
+                    <h2 data-bind="text: plan().Name"></h2>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<div>
+    <div class="container">
+        <div id="filters">
+            <ul class="option-set" >
+                <li>
+                    <a href="#" >Going</a>
+                </li>
+                <li>
+                    <a href="#" >Not Going</a>
+                </li>
+
+            </ul>
+        </div>
+    </div>
+
+</div>
+
+<!--<section id="map_container">-->
+<!--ko compose: {model:'viewmodels/googlemap', view: 'views/googlemap', activate:true} -->
+<!--/ko-->
+<!--	</section> -->
+
+<section class="main container-fluid">
+    <!--start: Wrapper-->
+    <div id="wrapper">
+        <!--start: Container -->
+        <div class="container">
+
+            <div id="portfolio-wrapper" class="row">
+
+                <div data-bind="foreach: { data: plan().Activities, beforeRemove: hidePlanItemElement }">
+                    <div class="picture" style=" margin-bottom: 2%; padding-bottom:1%">
+                        <div class="item-description">
+                            <div class="span12">
+
+                                <div class="span2">
+                                    <img class="img-polaroid" style="height: 80%; width: 80%" data-bind="attr: { src: Detail().image_url }">
+                                </div>
+                                <div class="span5">
+                                    <fieldset>
+                                        <div class="clearfix">
+
+                                            <h2>
+                                                <a data-bind="attr: { title: Detail().name, href: Detail().url }" target="_blank"><span style="font-weight: bold;" data-bind="text: Detail().name"></span></a>
+                                            </h2>
+
+                                        </div>
+                                        <div class="clearfix">
+                                            <h4>
+                                                <img data-bind="attr: { src: Detail().rating_img_url }" style="width: 84px; height: 17px;">
+                                                <a data-bind="attr: { title: Detail().name, href: Detail().url }" target="_blank"><span data-bind="text: Detail().review_count"></span>&nbsp;<span>reviews</span></a>
+                                            </h4>
+                                        </div>
+                                        <div class="clearfix">
+                                            <h4 data-bind="text: Detail().formated_address()"></h4>
+                                        </div>
+                                        <div class="clearfix">
+                                            <span data-bind="text:Detail().formated_phone"></span>
+                                        </div>
+
+                                        <div class="clearfix">
+                                            <a target="_blank" href="http://www.yelp.com">
+                                                <img src="http://s3-media3.ak.yelpcdn.com/assets/2/www/img/9c9b10dc7226/developers/reviewsFromYelpWHT.gif" alt="Reviews from Yelp, white" style="width: 115px; height: 25px;">
+                                            </a>
+                                        </div>
+                                        <div class="clearfix">
+                                        </div>
+                                    </fieldset>
+                                </div>
+
+                                <div class="span4">
+
+                                    <div class="row-fluid">
+                                        <div class="span7">
+                                            <input type="text" data-bind="datepicker: StartFormatedDate, datepickerOptions: $parent.dateOptions" />
+                                        </div>
+                                        <div class="span4">
+                                            <div class="bootstrap-timepicker">
+                                                <input class="input-small" type="text" data-bind="timepicker: StartFormatedTime, timepickerOptions: $parent.timeOptions">
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="clear"></div>
+
+                                <!--
+                                <div id="filters">
+
+                                    <ul class="option-set pull-left" data-option-key="filter">
+                                        <li>
+                                            <i class="mini-ico-remove"></i><a href="#" data-bind="click: $parent.removeActivity">Remove</a>
+                                        </li>
+
+                                    </ul>
+                                </div>-->
+
+                            </div>
+
+                        </div>
+                        <div class="clear"></div>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+</section>
+
+
+
+
+

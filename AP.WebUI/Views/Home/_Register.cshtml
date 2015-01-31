@@ -1,0 +1,29 @@
+﻿
+@model AP.WebUI.Models.RegisterModel
+
+@using (Html.BeginForm("JsonRegister", "Account", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post, new { Id = "registerForm" }))
+{
+    @Html.AntiForgeryToken()
+    
+    <fieldset>
+        <legend>
+            Sign up
+
+        </legend>
+        <div class="clearfix">
+                @Html.TextBoxFor(m => m.UserName, new { id = "registerName", placeholder="enter new username" })
+            </div>
+            <div class="clearfix">
+                @Html.PasswordFor(m => m.Password, new {placeholder="password"})
+            </div>
+            <div class="clearfix">
+                @Html.PasswordFor(m => m.ConfirmPassword, new {placeholder="confirm password"})
+            </div>
+           <div class="clearfix">
+                <input type="submit" value="Sign up" class="btn btn-primary" />
+               <input type="submit" id="showLogin" value="Log in" class="btn" />
+            </div>
+        
+        @Html.ValidationSummary()
+    </fieldset>
+}

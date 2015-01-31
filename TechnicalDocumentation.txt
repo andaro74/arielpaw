@@ -1,0 +1,22 @@
+Technical Documentation
+
+How to enable OAuth for single sign on MVC 4
+http://blogs.msdn.com/b/webdev/archive/2012/08/15/oauth-openid-support-for-webforms-mvc-and-webpages.aspx
+
+Using Facebook
+http://www.dotnetcurry.com/showarticle.aspx?ID=873
+
+MVC 5
+http://www.asp.net/mvc/tutorials/getting-started-with-ef-using-mvc/creating-an-entity-framework-data-model-for-an-asp-net-mvc-application
+
+Enable password reseting
+http://www.itorian.com/2013/03/PasswordResetting.html
+
+Facebook send dialog
+https://developers.facebook.com/docs/sharing/reference/send-dialog
+
+
+
+
+
+

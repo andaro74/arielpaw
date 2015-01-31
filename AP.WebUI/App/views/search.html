@@ -1,0 +1,24 @@
+﻿<!-- start: Page Title and search -->
+<div id="page-title">
+    <div id="page-title-inner">
+        <div class="container" style="height: 30px; padding: 12px 0px 12px 0px">
+            <div class="pull-left">
+               <form class="form-search"> 
+                    <input type="text" class="search-query span3" placeholder="Near the following location.." id="googleSearchBox" data-bind="value: locationFilter.selectedLocation.name, googleAutoComplete: locationFilter.autocompleteText" />
+                    <input type="text" class="search-query span2" placeholder="restaurant, bar, etc." id="categorySearchBox" data-bind="value: categorySearch" />
+                   <select class="span1" data-bind="options: availableDistances, optionsText: 'description', value: locationFilter.radius_filter"></select>
+                     <button type="submit" class="btn btn-inverse" data-bind="click: findLocations">Find</button>
+               </form>
+            </div>
+            <div class="pull-right">
+                 <button type="button" class="btn btn-inverse" data-bind="click: goBack">Back</button>
+               
+                    <button type="button" class="btn btn-info" data-bind="click: showHideMapContainer, showHideMap: mapvisible, slideduration: 600, text: mapText"></button>
+                
+            </div>
+        </div>
+
+    </div>
+
+</div>
+

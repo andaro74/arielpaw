@@ -1,0 +1,45 @@
+﻿#spinner {
+    visibility: hidden;
+    margin-left: 3px;
+}
+
+#poweredby, #searchbox {
+    line-height: 50px;
+}
+
+#searchbox {
+    text-align: center;
+}
+
+#poweredby {
+    float: right;
+    margin-right: 3px;
+}
+
+    #poweredby img {
+        vertical-align: baseline;
+    }
+
+
+.marker {
+    font-size: 12px;
+}
+
+    .marker .businessimage {
+        float: left;
+    }
+
+    .marker .ratingsimage {
+        vertical-align: middle;
+        margin-top: 0px;
+    }
+
+    .marker .businessinfo {
+        margin-left: 120px;
+    }
+
+
+.emptybusiness {
+  background-image: url("images/glyphicons-halflings-white.png");
+}
+

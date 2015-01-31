@@ -1,0 +1,39 @@
+﻿@model AP.WebUI.Models.LoginModel
+
+@using (Html.BeginForm("JsonLogin", "Account", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post, new { id = "loginForm" }))
+{
+    @Html.AntiForgeryToken()
+
+    <fieldset>
+
+        <legend>
+           Sign in 
+        </legend>
+        <div class="clearfix">
+
+            @Html.TextBoxFor(m => m.UserName, new { autofocus = "autofocus", id = "loginName", placeholder = "enter existing user" })
+            @Html.ValidationMessageFor(m => m.UserName)
+        </div>
+        <div class="clearfix">
+
+            @Html.PasswordFor(m => m.Password, new { placeholder = "password" })
+            @Html.ValidationMessageFor(m => m.Password)
+        </div>
+        <div class="clearfix">
+            <label class="checkbox">
+                @Html.CheckBoxFor(m => m.RememberMe)
+                Remember me
+            </label>
+        </div>
+        <div class="clearfix">
+            <input type="submit" value="Sign in" class="btn btn-primary " />
+
+            <input type="submit" id="showRegister" value="Sign up" class="btn" />
+
+            
+            
+        </div>
+
+        @Html.ValidationSummary()
+    </fieldset>
+}

@@ -1,0 +1,42 @@
+﻿<section>
+    <div  class="container">
+        <div class="navbar  navbar-inverse ">
+            <div class="navbar-inner">
+                <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </a>
+                <a class="brand" data-bind="attr: { href: router.navigationModel()[0].hash }">
+                    <i class="ico-sun ico-white circle-color-full"></i>
+                    <span>ArielPaw</span>.
+                </a>
+                <div data-bind="visible: router.isNavigating" class="loader pull-left" style="padding-top:7px;">
+                    <i class="icon-spinner icon-4x icon-spin"></i>
+                </div>
+                <div class="nav-collapse collapse">
+                     
+                    <!-- ko ifnot: isExternal -->
+                    
+                        <ul class="nav" data-bind="foreach: router.navigationModel">
+                            <li data-bind="css: { active: isActive }">
+                                <a data-bind="attr: { href: hash }, html: title"></a>
+                            </li>
+                        </ul>
+                        <ul class="nav">
+                            <li><a href="javascript:document.getElementById('logoutForm').submit()">Logout</a></li>
+                        </ul>
+                    <!-- /ko -->
+
+                    <!-- //added form for logout button notice use of token from the viewmodel-->
+                    <form method="post" action="Account/LogOff" id="logoutForm">
+                        <input type="hidden" name="__RequestVerificationToken" data-bind="value: token" />
+
+                    </form>
+                </div>
+            </div>
+        </div>
+      </div>
+</section>
+
+
